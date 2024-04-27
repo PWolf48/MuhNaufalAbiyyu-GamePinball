@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class paddleMovement : MonoBehaviour
+public class paddleController : MonoBehaviour
 {
     public KeyCode input;
     private HingeJoint hinge;
