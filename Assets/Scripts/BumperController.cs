@@ -10,6 +10,8 @@ public class BumperController : MonoBehaviour
     public Color color;
     private Renderer rnd;
     private Animator animator;
+    public AudioManager audioManager;
+    public VFXManager vfxManager;
 
     private void Start()
     {
@@ -23,7 +25,10 @@ public class BumperController : MonoBehaviour
         {
             Rigidbody ballRig = ball.GetComponent<Rigidbody>();
             ballRig.velocity *= multiplier;
+
             animator.SetTrigger("hit");
+            audioManager.PlaySFX(coll.transform.position);
+            vfxManager.PlayVFX(coll.transform.position);
         }
     }
 }
