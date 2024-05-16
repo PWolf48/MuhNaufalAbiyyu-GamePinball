@@ -9,6 +9,8 @@ public class SwitchController : MonoBehaviour
     public Material onMaterial;
     private SwitchState state;
     private Renderer renderer;
+    public ScoreManager scoreManager;
+    public float score;
     private void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -45,6 +47,7 @@ public class SwitchController : MonoBehaviour
     }
     private void Toggle()
     {
+        scoreManager.AddScore(score);
         if (state == SwitchState.On)
         {
             Set(false);
